@@ -33,7 +33,8 @@ def load_model_and_metadata():
 
         model = TemporalFusionTransformer.load_from_checkpoint(
             "models/tft_model_final.ckpt",
-            map_location=torch.device("cpu")
+            map_location=torch.device("cpu"),
+            strict=False  # Ignore unknown parameters from older pytorch-forecasting version
         )
         model.eval()
 
