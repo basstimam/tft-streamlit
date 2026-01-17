@@ -31,10 +31,20 @@ def load_model_and_metadata():
         with open("models/dataset_metadata.pkl", "rb") as f:
             metadata = pickle.load(f)
 
+        checkpoint = torch.load("models/tft_model_final.ckpt", map_location=torch.device("cpu"))
+
+        unknown_params = ['dataset_parameters', 'mask_bias', 'monotone_constraints']
+        for param in unknown_params:
+            if param in checkpoint["hyper_parameters"]:
+                del checkpoint["hyper_parameters"][param]
+
+        buffer = io.BytesIO()
+        torch.save(checkpoint, buffer)
+        buffer.seek(0)
+
         model = TemporalFusionTransformer.load_from_checkpoint(
-            "models/tft_model_final.ckpt",
-            map_location=torch.device("cpu"),
-            strict=False  # Ignore unknown parameters from older pytorch-forecasting version
+            buffer,
+            map_location=torch.device("cpu")
         )
         model.eval()
 
