@@ -173,7 +173,7 @@ if predict_btn:
                 )
                 ax.plot(
                     range(len(df_historical)-1, len(df_historical) + 6),
-                    [df_historical['rainfall_mm'].iloc[-1]] + predictions,
+                    predictions,
                     color='red',
                     linewidth=2,
                     linestyle='--',
