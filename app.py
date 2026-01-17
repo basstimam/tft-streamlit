@@ -256,7 +256,10 @@ if predict_btn:
                 df_table['Kategori'] = df_table['rainfall_mm'].apply(
                     lambda x: categorize_rainfall(x)[0]
                 )
-                df_table = df_table[['Hari', 'date', 'rainfall_mm', 'Kategori']]
+                df_table['Emoji'] = df_table['rainfall_mm'].apply(
+                    lambda x: categorize_rainfall(x)[1]
+                )
+                df_table = df_table[['Hari', 'date', 'rainfall_mm', 'Kategori', 'Emoji']]
                 df_table.columns = ['Hari', 'Tanggal', 'Curah Hujan (mm)', 'Kategori']
 
                 st.dataframe(
