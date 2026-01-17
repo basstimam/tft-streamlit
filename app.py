@@ -208,17 +208,21 @@ if predict_btn:
                 st.subheader("📋 Ringkasan Prediksi")
                 def categorize_rainfall(mm):
                     if mm == 0:
-                        return "Tidak Hujan", "🌞"
-                    elif mm < 1:
-                        return "Hujan Sangat Ringan", "🌤️"
+                        return "Berawan / Cerah", "🌞"
+                    elif mm < 0.5:
+                        return "Tidak ada air hujan yang turun (kering)", "☀️"
                     elif mm < 5:
-                        return "Hujan Ringan", "🌥️"
-                    elif mm < 10:
-                        return "Hujan Sedang", "🌧️"
+                        return "Hujan Ringan", "🌤️"
                     elif mm < 20:
+                        return "Hujan Sedang", "🌧️"
+                    elif mm < 50:
                         return "Hujan Lebat", "⛈️"
+                    elif mm < 100:
+                        return "Hujan Sangat Lebat", "⛈️"
+                    elif mm <= 150:
+                        return "Hujan Ekstrem", "⛈️"
                     else:
-                        return "Hujan Sangat Lebat", "🌊"
+                        return "Bencana alam", "⛈️"
                 tomorrow_rain = predictions[0]
                 rain_cat, rain_emoji = categorize_rainfall(tomorrow_rain)
 
