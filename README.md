@@ -87,12 +87,14 @@ Dashboard akan menampilkan:
 
 | Curah Hujan | Kategori | Emoji |
 |-------------|----------|-------|
-| 0 mm | Tidak Hujan | 🌞 |
-| < 1 mm | Sangat Ringan | 🌤️ |
-| 1-5 mm | Ringan | 🌥️ |
-| 5-10 mm | Sedang | 🌧️ |
-| 10-20 mm | Lebat | ⛈️ |
-| > 20 mm | Sangat Lebat | 🌊 |
+| 0 mm | Berawan / Cerah | 🌞 |
+| < 0.5 mm | Tidak ada air hujan yang turun (kering) | ☀️ |
+| 0.5-5 mm | Hujan Ringan | 🌤️ |
+| 5-20 mm | Hujan Sedang | 🌧️ |
+| 20-50 mm | Hujan Lebat | ⛈️ |
+| 50-100 mm | Hujan Sangat Lebat | ⛈️ |
+| 100-150 mm | Hujan Ekstrem | ⛈️ |
+| > 150 mm | Bencana alam | ⛈️ |
 
 ## 🔧 Teknologi
 
