@@ -301,7 +301,6 @@ st.caption("""
 with st.expander("📌 Catatan Penting"):
     st.markdown("""
     - **Model Performance:** Model ini dilatih pada data historis dan akurasi prediksi dapat bervariasi.
-    - **Limitasi:** Prediksi berdasarkan pattern data masa lalu dan tidak memperhitungkan perubahan ekstrem mendadak.
-    - **Disclaimer:** Prediksi ini hanya untuk keperluan akademis dan presentasi skripsi. Tidak untuk keperluan operasional resmi.
-    - **Kontak:** Hubungi peneliti untuk informasi lebih lanjut tentang model dan metodologi.
+    - **Limitasi:** Prediksi berdasarkan pattern data masa lalu.
+    - **Disclaimer:** Prediksi ini hanya untuk keperluan akademis dan presentasi skripsi. 
     """)
