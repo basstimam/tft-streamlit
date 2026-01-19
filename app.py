@@ -75,7 +75,7 @@ df_sample = load_sample_data()
 
 if df_sample is None:
     st.stop()
-st.sidebar.header("⚙️ Konfigurasi Simulasi")
+
 
 # Filter tanggal yang bisa dipilih (harus punya cukup data historis 30 hari sebelumnya)
 min_date = df_sample['date'].min() + timedelta(days=30)
