@@ -79,7 +79,8 @@ st.sidebar.header("⚙️ Konfigurasi Simulasi")
 
 # Filter tanggal yang bisa dipilih (harus punya cukup data historis 30 hari sebelumnya)
 min_date = df_sample['date'].min() + timedelta(days=30)
-max_date = df_sample['date'].max() - timedelta(days=7)
+max_date_limit = pd.Timestamp('2025-07-07')
+max_date = min(df_sample['date'].max() - timedelta(days=7), max_date_limit)
 
 valid_dates = df_sample[
     (df_sample['date'] >= min_date) &
@@ -260,7 +261,7 @@ if predict_btn:
                     lambda x: categorize_rainfall(x)[1]
                 )
                 df_table = df_table[['Hari', 'date', 'rainfall_mm', 'Kategori', 'Emoji']]
-                df_table.columns = ['Hari', 'Tanggal', 'Curah Hujan (mm)', 'Kategori']
+                df_table.columns = ['Hari', 'Tanggal', 'Curah Hujan (mm)', 'Kategori', 'Emoji']
 
                 st.dataframe(
                     df_table.style.background_gradient(
