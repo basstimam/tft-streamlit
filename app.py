@@ -101,7 +101,7 @@ selected_date = st.sidebar.selectbox(
 )
 
 st.sidebar.info(f"""
-📋 **Informasi Simulasi:**
+📋 **Informasi Prediksi:**
 - Tanggal Prediksi: **{selected_date.strftime('%d %B %Y')}**
 - Input Encoder: **30 hari** data historis
 - Output Decoder: **7 hari** prediksi ke depan
